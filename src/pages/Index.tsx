@@ -171,7 +171,7 @@ const Index = () => {
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">Email me at</p>
                   <p className="text-lg font-semibold text-gray-900 dark:text-white">
-                    vempatir@uci.edu
+                    vempatir at uci dot edu
                   </p>
                 </div>
               </div>
@@ -190,7 +190,7 @@ const Index = () => {
       <footer className="py-8 px-6 bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-gray-600 dark:text-gray-400">
-            © 2024 Radhakrishna Vempati. Built with passion and code.
+            © 2025 Radhakrishna Vempati.
           </p>
         </div>
       </footer>
