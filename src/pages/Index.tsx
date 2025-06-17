@@ -71,7 +71,7 @@ const Index = () => {
   }, [isDarkMode]);
 
   const handleEmailClick = () => {
-    navigator.clipboard.writeText('radhakrishna.vempati@email.com');
+    navigator.clipboard.writeText('vempatir@uci.edu');
     toast.success('Email copied to clipboard!');
   };
 
@@ -171,7 +171,7 @@ const Index = () => {
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">Email me at</p>
                   <p className="text-lg font-semibold text-gray-900 dark:text-white">
-                    radhakrishna.vempati@email.com
+                    vempatir@uci.edu
                   </p>
                 </div>
               </div>
