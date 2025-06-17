@@ -9,8 +9,8 @@ interface Project {
   title: string;
   description: string;
   technologies: string[];
-  githubLink: string;
-  liveLink: string;
+  githubLink?: string;
+  liveLink?: string;
   imageUrl?: string;
 }
 
@@ -70,26 +70,32 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               </div>
             </div>
             
-            {/* Action Buttons */}
-            <div className="flex gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                className="flex items-center gap-1.5 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 text-xs"
-                onClick={() => window.open(project.githubLink, '_blank')}
-              >
-                <Github className="h-3 w-3" />
-                View Code
-              </Button>
-              <Button
-                size="sm"
-                className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs"
-                onClick={() => window.open(project.liveLink, '_blank')}
-              >
-                <ExternalLink className="h-3 w-3" />
-                Live Demo
-              </Button>
-            </div>
+            {/* Action Buttons - only show if links exist */}
+            {(project.githubLink || project.liveLink) && (
+              <div className="flex gap-2">
+                {project.githubLink && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="flex items-center gap-1.5 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 text-xs"
+                    onClick={() => window.open(project.githubLink, '_blank')}
+                  >
+                    <Github className="h-3 w-3" />
+                    View Code
+                  </Button>
+                )}
+                {project.liveLink && (
+                  <Button
+                    size="sm"
+                    className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs"
+                    onClick={() => window.open(project.liveLink, '_blank')}
+                  >
+                    <ExternalLink className="h-3 w-3" />
+                    Live Demo
+                  </Button>
+                )}
+              </div>
+            )}
           </CardContent>
         </div>
       </div>
