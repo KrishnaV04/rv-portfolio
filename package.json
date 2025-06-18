@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://KrishnaV04.github.io/rv-portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
