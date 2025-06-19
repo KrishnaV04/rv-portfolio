@@ -5,12 +5,13 @@
   "type": "module",
   "homepage": "https://krishnav04.github.io/rv-portfolio/",
   "scripts": {
+    "clean": "rm -rf dist",
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
+    "predeploy": "npm run clean && vite build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
