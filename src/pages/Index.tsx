@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Moon, Sun, Mail, ExternalLink, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -21,34 +20,15 @@ const Index = () => {
     "Digital Creator"
   ];
 
-  // Sample projects data - you can easily modify these
+  // Updated projects data with LLMath project
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      githubLink: "https://github.com/yourusername/ecommerce",
-      liveLink: "https://your-ecommerce-demo.com",
-      imageUrl: "/placeholder.svg"
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, team collaboration features, and intuitive drag-and-drop interface.",
-      technologies: ["Vue.js", "Firebase", "TypeScript", "Tailwind CSS"],
-      githubLink: "https://github.com/yourusername/taskmanager",
-      liveLink: "https://your-taskmanager-demo.com",
-      imageUrl: "/placeholder.svg"
-    },
-    {
-      id: 3,
-      title: "AI Chat Application",
-      description: "An intelligent chatbot application integrated with OpenAI's GPT API, featuring conversation history and custom personality settings.",
-      technologies: ["React", "OpenAI API", "Express.js", "MongoDB"],
-      githubLink: "https://github.com/yourusername/ai-chat",
-      liveLink: "https://your-ai-chat-demo.com",
-      imageUrl: "/placeholder.svg"
+      title: "LLMath – Scalable AI-Powered Math Generation",
+      description: "LLMath is a React + Vite web application powered by a custom LLM service pipeline for generating educational math problems. The backend uses DeepSeek models served through a fully containerized FastAPI stack, leveraging Docker for reproducibility and asynchronous request handling. The app is deployed on Render with automatic deployments, while DNS and HTTPS are managed via Cloudflare.",
+      technologies: ["React", "Vite", "TypeScript", "FastAPI", "Docker", "DeepSeek LLM", "Render", "Cloudflare", "GitHub Actions (CI/CD)", "Python", "RESTful API"],
+      liveLink: "https://llmath.org",
+      imageUrl: "/placeholder.svg" // This will be replaced when you upload your PNG image
     }
   ];
 

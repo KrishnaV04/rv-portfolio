@@ -2,14 +2,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 interface Project {
   id: number;
   title: string;
   description: string;
   technologies: string[];
-  githubLink?: string;
   liveLink?: string;
   imageUrl?: string;
 }
@@ -20,28 +19,34 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const hasImage = project.imageUrl && project.imageUrl !== "/placeholder.svg";
+  const isValidImage = hasImage && (project.imageUrl?.endsWith('.png') || project.imageUrl?.endsWith('.jpg') || project.imageUrl?.endsWith('.jpeg') || project.imageUrl?.endsWith('.webp'));
 
   return (
     <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.01] bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-      <div className={hasImage ? "md:flex" : ""}>
-        {/* Project Image - only show if image exists */}
-        {hasImage && (
+      <div className={isValidImage ? "md:flex" : ""}>
+        {/* Project Image - show uploaded image or gradient placeholder */}
+        {isValidImage ? (
           <div className="md:w-1/3">
-            <div className="h-32 md:h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center relative">
+            <div className="h-32 md:h-full">
               <img 
                 src={project.imageUrl} 
                 alt={project.title}
-                className="w-full h-full object-cover opacity-20"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute text-white text-xl font-bold">
-                {project.title.split(' ').map(word => word[0]).join('')}
+            </div>
+          </div>
+        ) : (
+          <div className="md:w-1/3">
+            <div className="h-32 md:h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+              <div className="text-white text-xl font-bold">
+                {project.title.split(' ').slice(0, 2).map(word => word[0]).join('')}
               </div>
             </div>
           </div>
         )}
         
         {/* Project Content */}
-        <div className={`${hasImage ? 'md:w-2/3' : 'w-full'} p-4`}>
+        <div className={`${isValidImage ? 'md:w-2/3' : 'w-full'} p-4`}>
           <CardHeader className="p-0 mb-3">
             <CardTitle className="text-xl font-bold text-gray-900 dark:text-white mb-1">
               {project.title}
@@ -70,30 +75,17 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               </div>
             </div>
             
-            {/* Action Buttons - only show if links exist */}
-            {(project.githubLink || project.liveLink) && (
+            {/* Action Button - only show if live link exists */}
+            {project.liveLink && (
               <div className="flex gap-2">
-                {project.githubLink && (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex items-center gap-1.5 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 text-xs"
-                    onClick={() => window.open(project.githubLink, '_blank')}
-                  >
-                    <Github className="h-3 w-3" />
-                    View Code
-                  </Button>
-                )}
-                {project.liveLink && (
-                  <Button
-                    size="sm"
-                    className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs"
-                    onClick={() => window.open(project.liveLink, '_blank')}
-                  >
-                    <ExternalLink className="h-3 w-3" />
-                    Live Demo
-                  </Button>
-                )}
+                <Button
+                  size="sm"
+                  className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs"
+                  onClick={() => window.open(project.liveLink, '_blank')}
+                >
+                  <ExternalLink className="h-3 w-3" />
+                  Link
+                </Button>
               </div>
             )}
           </CardContent>
