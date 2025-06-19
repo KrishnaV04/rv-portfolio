@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Moon, Sun, Mail, ExternalLink, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -102,37 +101,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-20 px-6 bg-white dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            About Me
-          </h2>
-          <div className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed space-y-6">
-            <p>
-              I'm a dedicated software engineer with a passion for creating impactful digital experiences. 
-              My journey in technology began with curiosity and has evolved into a deep commitment to 
-              crafting elegant solutions that make a difference.
-            </p>
-            <p>
-              With expertise spanning multiple programming languages and frameworks, I enjoy tackling 
-              challenging problems and turning complex requirements into intuitive, user-friendly applications. 
-              I believe in continuous learning and staying at the forefront of technological innovation.
-            </p>
-            <p>
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source 
-              projects, or sharing knowledge with the developer community. I'm always excited to collaborate 
-              on projects that push boundaries and create meaningful impact.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Projects Section */}
       <section className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            My Projects
+            Featured Projects
           </h2>
           <div className="space-y-8">
             {projects.map((project) => (
@@ -144,34 +117,40 @@ const Index = () => {
 
       {/* Contact Section */}
       <section className="py-20 px-6 bg-white dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8 text-gray-900 dark:text-white">
-            Get In Touch
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
-            I'm always interested in new opportunities and exciting projects. 
-            Feel free to reach out if you'd like to collaborate or just want to say hello!
-          </p>
-          
-          <Card className="max-w-md mx-auto bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600">
-            <CardContent className="p-8">
-              <div className="flex items-center justify-center space-x-4 mb-6">
-                <Mail className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-                <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Email me at</p>
-                  <p className="text-lg font-semibold text-gray-900 dark:text-white">
-                    vempatir at uci dot edu
-                  </p>
-                </div>
-              </div>
-              <Button 
-                onClick={handleEmailClick}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-              >
-                Copy Email Address
-              </Button>
-            </CardContent>
-          </Card>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-left">
+              <h2 className="text-4xl font-bold mb-8 text-gray-900 dark:text-white">
+                Get In Touch
+              </h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                I'm always interested in new opportunities and exciting projects. 
+                Feel free to reach out if you'd like to collaborate or just want to say hello!
+              </p>
+            </div>
+            
+            <div className="flex justify-center md:justify-end">
+              <Card className="w-full max-w-md bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600">
+                <CardContent className="p-8">
+                  <div className="flex items-center justify-center space-x-4 mb-6">
+                    <Mail className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                    <div>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">Email me at</p>
+                      <p className="text-lg font-semibold text-gray-900 dark:text-white">
+                        vempatir at uci dot edu
+                      </p>
+                    </div>
+                  </div>
+                  <Button 
+                    onClick={handleEmailClick}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                  >
+                    Copy Email Address
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
       </section>
 
