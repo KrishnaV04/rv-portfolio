@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Moon, Sun, Mail, ExternalLink, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -20,7 +21,7 @@ const Index = () => {
     "Digital Creator"
   ];
 
-  // Updated projects data with LLMath project
+  // Updated projects data with both LLMath and Last Minute AI projects
   const projects = [
     {
       id: 1,
@@ -28,6 +29,14 @@ const Index = () => {
       description: "LLMath is a React + Vite web application powered by a custom LLM service pipeline for generating educational math problems. The backend uses DeepSeek models served through a fully containerized FastAPI stack, leveraging Docker for reproducibility and asynchronous request handling. The app is deployed on Render with automatic deployments, while DNS and HTTPS are managed via Cloudflare.",
       technologies: ["React", "Vite", "TypeScript", "FastAPI", "Docker", "DeepSeek LLM", "Render", "Cloudflare", "GitHub Actions (CI/CD)", "Python", "RESTful API"],
       liveLink: "https://llmath.org",
+      imageUrl: "/placeholder.svg" // This will be replaced when you upload your PNG image
+    },
+    {
+      id: 2,
+      title: "Last Minute AI – Generative Agent Model",
+      description: "Last Minute AI is a generative agent tool built with a Retrieval-Augmented Generation (RAG) architecture using OpenAI GPT-4o, ChromaDB, and vector embeddings. It enables users to interact with their own document corpora, supporting large context windows for high-relevance responses. The system also integrates dynamic web search, allowing semantic indexing of both uploaded files and online content for unified query handling. Users can fine-tune the retrieval scope through custom context window settings, offering more control and interpretability than baseline chatbot systems.",
+      technologies: ["OpenAI GPT", "ChromaDB", "Streamlit", "Python", "LangChain", "RESTful API"],
+      liveLink: "https://lastminuteai.streamlit.app",
       imageUrl: "/placeholder.svg" // This will be replaced when you upload your PNG image
     }
   ];
