@@ -11,13 +11,16 @@ const Index = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   const descriptiveWords = [
+    "AI Engineer",
+    "ML Researcher", 
+    "Data Engineer",
     "Software Engineer",
-    "Full Stack Developer", 
-    "Problem Solver",
-    "Tech Enthusiast",
-    "Code Architect",
-    "Innovation Driver",
-    "Digital Creator"
+    "Full Stack Developer",
+    "Machine Learning Engineer",
+    "AI Research Scientist",
+    "Deep Learning Specialist",
+    "NLP Engineer",
+    "Computer Vision Engineer"
   ];
 
   // Updated projects data with both LLMath and Last Minute AI projects
