@@ -12,12 +12,19 @@ const Index = () => {
 
   const descriptiveWords = [
     "Software Engineer",
-    "Full Stack Developer", 
+    "AI Researcher",
+    "Full-Stack Developer", 
     "Problem Solver",
-    "Tech Enthusiast",
-    "Code Architect",
-    "Innovation Driver",
-    "Digital Creator"
+    "Fast Learner",
+    "Creative Technologist",
+    "Algorithms Expert",
+    "Data Enthusiast",
+    "Machine Learning Engineer",
+    "Open Source Contributor",
+    "Curious Explorer",
+    "UCI Anteater",
+    "Optimizer of Everything",
+    "Vision-Driven Creator"
   ];
 
   // Updated projects data with both LLMath and Last Minute AI projects
