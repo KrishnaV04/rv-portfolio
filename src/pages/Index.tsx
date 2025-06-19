@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Moon, Sun, Mail, ExternalLink, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -27,7 +28,12 @@ const Index = () => {
     "Vision-Driven Creator"
   ];
 
-  // Updated projects data with both LLMath and Last Minute AI projects
+  // Helper function to determine if word starts with vowel
+  const startsWithVowel = (word: string) => {
+    return /^[aeiouAEIOU]/.test(word);
+  };
+
+  // Updated projects data with all four projects
   const projects = [
     {
       id: 1,
@@ -35,7 +41,7 @@ const Index = () => {
       description: "LLMath is a React + Vite web application powered by a custom LLM service pipeline for generating educational math problems. The backend uses DeepSeek models served through a fully containerized FastAPI stack, leveraging Docker for reproducibility and asynchronous request handling. The app is deployed on Render with automatic deployments, while DNS and HTTPS are managed via Cloudflare.",
       technologies: ["React", "Vite", "TypeScript", "FastAPI", "Docker", "DeepSeek LLM", "Render", "Cloudflare", "GitHub Actions (CI/CD)", "Python", "RESTful API"],
       liveLink: "https://llmath.org",
-      imageUrl: "/placeholder.svg" // This will be replaced when you upload your PNG image
+      imageUrl: "/placeholder.svg"
     },
     {
       id: 2,
@@ -43,7 +49,21 @@ const Index = () => {
       description: "Last Minute AI is a generative agent tool built with a Retrieval-Augmented Generation (RAG) architecture using OpenAI GPT-4o, ChromaDB, and vector embeddings. It enables users to interact with their own document corpora, supporting large context windows for high-relevance responses. The system also integrates dynamic web search, allowing semantic indexing of both uploaded files and online content for unified query handling. Users can fine-tune the retrieval scope through custom context window settings, offering more control and interpretability than baseline chatbot systems.",
       technologies: ["OpenAI GPT", "ChromaDB", "Streamlit", "Python", "LangChain", "RESTful API"],
       liveLink: "https://lastminuteai.streamlit.app",
-      imageUrl: "/placeholder.svg" // This will be replaced when you upload your PNG image
+      imageUrl: "/placeholder.svg"
+    },
+    {
+      id: 3,
+      title: "Computer Vision: Bacteria Growth Tracker",
+      description: "Designed simulation software leveraging AI and computer vision techniques to predict bacteria growth trajectories. Developed tools to extract and preprocess data from video datasets using dimension reduction, noise reduction, Gaussian blur, and other enhancement methods. Applied image segmentation and thresholding techniques from AI libraries to accurately delineate bacteria contours for improved analysis.",
+      technologies: ["Python", "OpenCV", "TensorFlow", "PyTorch", "Image Processing Libraries"],
+      imageUrl: "/placeholder.svg"
+    },
+    {
+      id: 4,
+      title: "Space Invaders, Reinforcement Learning Optimization",
+      description: "Developed and tested a hybrid neural network pruning approach (combining L1 and random pruning) applied to PPO and DQN reinforcement learning models. Achieved reduced model complexity and improved computational efficiency with negligible performance loss. Conducted experiments on the Atari Space Invaders environment, using C++ and PyTorch for implementation and Weights & Biases for real-time performance tracking and evaluation.",
+      technologies: ["C++", "Python", "PyTorch", "Weights & Biases", "Neural Network Pruning Tools"],
+      imageUrl: "/placeholder.svg"
     }
   ];
 
@@ -95,15 +115,13 @@ const Index = () => {
             </span>
           </h1>
           <div className="text-3xl md:text-5xl font-semibold mb-8 text-gray-700 dark:text-gray-300 h-16 flex items-center justify-center">
-            <span>I am a </span>
+            <span>I am {startsWithVowel(descriptiveWords[currentWordIndex]) ? 'an' : 'a'} </span>
             <span className="ml-3 text-blue-600 dark:text-blue-400 animate-fade-in">
               {descriptiveWords[currentWordIndex]}
             </span>
           </div>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl mx-auto">
-            Passionate about creating innovative solutions and bringing ideas to life through code. 
-            I specialize in building scalable applications and love exploring new technologies 
-            to solve complex problems.
+            I have a degree in Computer Science from UCI and am a passionate engineer driven by curiosity and creativity. I love exploring new technologies, building innovative solutions, and tackling complex challenges that make a real impact. Check out some of the projects I've built below to see what I've been working on.
           </p>
         </div>
       </section>
