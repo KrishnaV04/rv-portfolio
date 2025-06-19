@@ -24,8 +24,8 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.01] bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
       <div className={isValidImage ? "md:flex" : ""}>
-        {/* Project Image - show uploaded image or gradient placeholder */}
-        {isValidImage ? (
+        {/* Project Image - only show if valid image exists */}
+        {isValidImage && (
           <div className="md:w-1/3">
             <div className="h-32 md:h-full">
               <img 
@@ -33,14 +33,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 alt={project.title}
                 className="w-full h-full object-cover"
               />
-            </div>
-          </div>
-        ) : (
-          <div className="md:w-1/3">
-            <div className="h-32 md:h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-              <div className="text-white text-xl font-bold">
-                {project.title.split(' ').slice(0, 2).map(word => word[0]).join('')}
-              </div>
             </div>
           </div>
         )}
